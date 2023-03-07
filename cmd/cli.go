@@ -91,7 +91,11 @@ func hosts(cmd *cobra.Command, args []string) error {
 }
 
 func process(cmd *cobra.Command, args []string) error {
-	resp, err := sdk.GetProcessList(args[0])
+	hostId := utils.Trans2HostId(args[0])
+	if hostId == "" {
+		return errors.New("host offline or not exists，use `collar hosts` to check host status。")
+	}
+	resp, err := sdk.GetProcessList(hostId)
 	if err != nil {
 		return err
 	}

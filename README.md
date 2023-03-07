@@ -12,9 +12,9 @@ Collar 作为 Collie 牧羊犬的项圈，希望能让用户更加舒适的管�
 
 目前已支持的功能模块：
 
-+ 主机列表
-+ 进程列表
 + shell终端
++ 主机列表(输出优化中)
++ 进程列表(输出优化中)
 
 ## 开始使用
 
@@ -43,6 +43,7 @@ Collar 作为 Collie 牧羊犬的项圈，希望能让用户更加舒适的管�
 获取主机列表信息。
 
 ### 进程列表
+
 `collar top [hostId/host_name/host_ip/host_inner_ip]`
 
 获取主机进程信息， 每3s更新一次。
@@ -51,7 +52,7 @@ Collar 作为 Collie 牧羊犬的项圈，希望能让用户更加舒适的管�
 
 `collar shell [hostId/host_name/host_ip/host_inner_ip]`
 
-可以通过 主机ID/主机名/主机IP/主机内网IP 进行登录。  
+可以通过 主机ID/主机名/主机IP/主机内网IP 进行登录。
 
 **使用自动登陆模式**：
 
