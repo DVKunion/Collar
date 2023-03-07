@@ -1,0 +1,34 @@
+before:
+  hooks:
+    - go mod tidy
+builds:
+  - binary: collar
+    env:
+      - CGO_ENABLED=0
+    main: ./cmd/cli.go
+    goos:
+      - linux
+      - windows
+      - darwin
+    goarm:
+      - 6
+      - 7
+    ldflags:
+      - -s -w -X github.com/DVKunion/collar/pkg/config.Version={{.Version}}
+archives:
+  - replacements:
+      darwin: darwin
+      linux: linux
+      windows: windows
+      386: i386
+      amd64: x86_64
+checksum:
+  name_template: 'checksums.txt'
+snapshot:
+  name_template: "{{ .Tag }}-next"
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
