@@ -12,7 +12,7 @@ import (
 
 const (
 	Host          = "collie.rivers.chaitin.cn"
-	HostList      = "api/v1/host/list?page=1&size=1000"
+	HostList      = "api/v1/host/list?group_id=0&page=1&size=1000"
 	ProcessList   = "api/v1/host/%s/processes?id=%s&field=cpu_usage&order_by=desc&type=instant"
 	LoginList     = "api/v1/host/%s/login_history?id=%s&type=instant"
 	ImageList     = "api/v1/docker/%s/images?id=%s"
